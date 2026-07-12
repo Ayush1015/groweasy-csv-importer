@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '@/lib/api';
 import { useImportStore } from '@/store/useImportStore';
 import { toast } from 'sonner';
 import { Sparkles, AlertTriangle, RefreshCcw, Loader2 } from 'lucide-react';
@@ -38,7 +39,7 @@ export const ProcessStep = () => {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/import', formData, {
+      const response = await axios.post(`${API_BASE_URL}/api/import`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       
