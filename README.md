@@ -79,5 +79,5 @@ Accepts a `multipart/form-data` request with a `.csv` file.
 - No historical persistence, as the app is stateless.
 
 ## Live Demo
-[Live Demo URL Placeholder]
-[GitHub Repository Placeholder]
+- Live App: https://groweasy-csv-importer-silk.vercel.app
+- Backend API: https://groweasy-csv-importer-production-0dca.up.railway.app
