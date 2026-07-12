@@ -37,7 +37,7 @@ Backend (`backend/.env`):
 ```env
 PORT=5000
 CORS_ORIGIN=http://localhost:3000
-GEMINI_API_KEY="AIzaSyAFoQJvqQtSLuCqsSf9M0nA7WkNNmSbvSE"
+GEMINI_API_KEY=My Gemini Key
 BATCH_SIZE=20
 CONCURRENCY_CAP=3
 ```
