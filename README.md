@@ -1,7 +1,6 @@
 # GrowEasy AI-Powered CSV Importer
 
-An AI-powered CSV importer built to ingest arbitrary CRM lead exports (Facebook, Real Estate CRMs, etc.) and map them intelligently to GrowEasy's fixed CRM schema using Anthropic's Claude.
-
+An AI-powered CSV importer built to ingest arbitrary CRM lead exports (Facebook, Real Estate CRMs, etc.) and map them intelligently to GrowEasy's fixed CRM schema using Google's Gemini API.
 ## Architecture
 
 ```text
@@ -17,7 +16,7 @@ groweasy-csv-importer/
 
 ### Design Decisions
 1. **Stateless Backend**: We avoid a database (like SQLite/PostgreSQL) to minimize deployment risk and keep the architecture simple, matching the assignment's requirement for a streamlined review.
-2. **AI Provider Abstraction**: Using the `@anthropic-ai/sdk`, the core logic is encapsulated in `ai.service.ts`, making it swappable for another provider in the future.
+2. **AI Provider Abstraction**: Using the @google/generative-ai SDK, the core logic is encapsulated in ai.service.ts, making it swappable for another provider in the future.
 3. **Concurrency & Resilience**: We use `p-limit` for processing batches of CSV rows concurrently (speed) and `p-retry` to retry on transient AI failures.
 4. **Zod Validation**: Ensures the AI outputs always strictly adhere to the CRM enums and types, or correctly maps invalid enums to empty values.
 
@@ -25,7 +24,7 @@ groweasy-csv-importer/
 
 ### 1. Prerequisites
 - Node.js (v18 or higher)
-- Anthropic API Key
+- Gemini API Key(from Google AI Studio: https://aistudio.google.com/apikey)
 
 ### 2. Installation
 Run from the root directory:
@@ -38,7 +37,7 @@ Backend (`backend/.env`):
 ```env
 PORT=5000
 CORS_ORIGIN=http://localhost:3000
-ANTHROPIC_API_KEY=your_anthropic_key
+GEMINI_API_KEY="AIzaSyAFoQJvqQtSLuCqsSf9M0nA7WkNNmSbvSE"
 BATCH_SIZE=20
 CONCURRENCY_CAP=3
 ```
