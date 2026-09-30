@@ -5,7 +5,7 @@ An AI-powered CSV importer built to ingest arbitrary CRM lead exports (Facebook,
 
 ```text
 groweasy-csv-importer/
-├── frontend/ (Next.js 14, Tailwind, Zustand)
+├── frontend/ (Next.js 16, React 19, Tailwind, Zustand)
 │   └── UI for file upload, preview, processing status, and results.
 ├── backend/ (Node.js, Express, TypeScript)
 │   └── API for CSV parsing, batched AI processing, and strict Zod validation.
@@ -23,8 +23,8 @@ groweasy-csv-importer/
 ## Setup Instructions
 
 ### 1. Prerequisites
-- Node.js (v18 or higher)
-- Gemini API Key(from Google AI Studio: https://aistudio.google.com/apikey)
+- Node.js 22.12 or newer (required by the current dependency versions)
+- Gemini API key (from Google AI Studio: https://aistudio.google.com/apikey)
 
 ### 2. Installation
 Run from the root directory:
